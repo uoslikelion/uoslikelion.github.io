@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="http://bootswatch.com/readable/bootstrap.min.css"> -->
+    <script src="https://mozilla.github.io/nunjucks/files/nunjucks.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var windowEl = $(window);
+        var resize_video = function(width, ratio) {
+          var videoEl = $("#background-video"),
+              videoWrapper = $("#video-wrapper"),
+              height = width / ratio,
+              context;
+
+          videoWrapper.css("width", width + "px");
+          videoWrapper.css("height", height + "px");
+          videoEl.attr("width", width + "px");
+          videoEl.attr("height", height + "px");
+        };
+        windowEl.resize(function() {
+          resize_video(windowEl.width(), 1400 / 788);
+        });
+        resize_video(windowEl.width(), 1400 / 788);
+
+
+        var renderElement = function(selector, context) {
+          var el = $(selector);
+          el.html(nunjucks.renderString(el.html(), context));
+        };
+        // Template Rendering
+        context = {
+          members: [
+            {
+              "name": "마노하",
+              "major": "신소재공학과",
+              "intro":"맨 처음 멋쟁이 사자처럼에 지원하던 때가 생각납니다. 때는 겨울, 수도관은 동파되고 저는 샤워도 못하고 벌벌"
+            },
+            {
+              "name": "이사사",
+              "major": "건축학과",
+              "intro": "매미가 시끄럽게 우는 중에도 우리는 코딩을 계속했습니다. 땀은 맥북 키보드 사이로 흐르고 저는 이 비싼 기계를"
+            },
+            {
+              "name": "김리",
+              "major": "지휘과",
+              "intro": "우리학교에도 창업을 노리고 계신 분들이 많은 것으로 압니다. 저 역시 여러 팀을 거치며 개발을 새발 같이 여겨"
+            },
+            {
+              "name": "박모소",
+              "major": "법학과",
+              "intro": "오늘은 세탁기를 돌리다가 섬유유연제를 바닥에 흘려서 집안에서 좋은 향기가 납니다. 실수가 아니라 앞으로는 일부러"
+            },
+            {
+              "name": "한상팡",
+              "major": "음악학과 첼로전공",
+              "intro": "플레이스 홀더는 참 멋진 것이에요. 그냥 무의미한 텍스트의 나열일 뿐 어떠한 의미도 없다는 사실은 저로 하여금"
+            }
+          ]
+        };
+
+        renderElement("#template", context);
+
+      });
+    </script>
+    <style>
+      /*
+       * Typography
+       */
+      @import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+      * {
+        font-family: 'Spoqa Han Sans', 'Sans-serif';
+      }
+
+      /*
+       * Default Config
+       */
+      .container {
+        max-width: 840px;
+      }
+
+      /*
+       * VideoWrapper
+       */
+      #video-wrapper > .fill {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 10000;
+        width: 100%;
+        height: 100%;
+      }
+      #video-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+      #video-wrapper > .overlay {
+        background-color: rgba(255, 255, 255, 0.45);
+      }
+      .overlay {
+        background-color: rgba(255, 255, 255, 0.45);
+      }
+      #video-wrapper .jumbo-text {
+        font-weight: 900;
+        font-size: 12vw;
+        margin-left: 10vw;
+        font-family:helvetica;
+      }
+      #video-wrapper .direction {
+        font-weight: 900;
+        font-size: 2vw;
+        margin-left: 3vw;
+        color:white;
+        font-family:helvetica;
+      }
+      @media(screen < 600px) {
+        #video-wrapper .jumbo-text {
+          line-height: 12vw;
+          font-size: 15vw;
+        }
+      }
+      #activity {
+        width:100%;
+        height:250px;
+        padding:8%;
+        border:1px solid #eee;
+        font-family:helvetica;
+      }
+      #activity p {
+        text-align:left;
+
+      }
+      #beginner {
+        width:100%;
+        height:220px;
+        padding:6.6%;
+        text-align:left;
+        border:1px solid #eee;
+        background-color:#eee;
+        font-family:helvetica;
+      }
+      hr {
+        border-top:5px solid #eee;
+      }
+      h1 {
+        color:white;
+        font-family:helvetica;
+      }
+      h2 {
+        color:#575757;
+      }
+      h3 {
+        color:#575757;
+        font-family:helvetica;
+      }
+      p {
+        font-family:helvetica;
+      }
+      #direction {
+        text-align:center;
+
+      }
+      a {
+        color:white;
+        font-family:helvetica;
+      }
+      .apply {
+       height:250px;
+       text-align:center;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="template">
+      <div id="video-wrapper">
+        <div class="fill overlay">
+            <!-- <div class="col-xs-offset-1 col-xs-8"> -->
+            <h1 class="jumbo-text" style="color: #33ccff">와서!</h1>
+            <h1 class="jumbo-text" style="color: #ffcc33">같이!</h1>
+            <h1 class="jumbo-text" style="color: #ff3366">만들어요!</h1>
+            <div id="direction">
+              <h1 class="direction"><a href="/#whoweare">Introduction</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#date">Draft</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#members">Members</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#contact">Contact</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#contact" style="color:red;">지원하기</a></h1>
+            </div>
+        </div>
+        <iframe src="https://player.vimeo.com/video/153587143?autoplay=1&loop=1&title=0&byline=0&portrait=0"
+            id="background-video"
+            width="1400" height="787" frameborder="0"
+            webkitallowfullscreen mozallowfullscreen allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- who we are  -->
+
+      <section id="whoweare">
+        <div class="container" style="width:100%; height:100%px; padding-top:5%; padding-bottom:5%; text-align:center;">
+          <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8" style="font-family:helvetica;">
+              <h1 style="color:black;">멋쟁이 사자처럼 서울시립대 팀</h1>
+              <h2 style="color:#575757;">Likelion in University of Seoul</h2>
+
+              <hr>
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div id="beginner">
+                <h2>웹서비스를 직접 만들고싶다</h2>
+                <p>평소 직접 원하던 서비스를 만들어 보고싶었지만 방법을 몰랐던 분이나 벤쳐를 준비하는 분들이 쉽게 배워나가는 프로그램입니다.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div id="beginner">
+                <h2>프로그래밍을 배우고 싶다</h2>
+                <p>프로그래밍 입문자나 경험자라도 새로운 언어로 공부해보려는 사람들을 위해서도 좋은 프로그램입니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="font-size:50px; margin-top:2%; margin-bottom:2%; color:#00a883"></span>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="https://www.smashingmagazine.com/images/ruby-on-rails-tips/rails.jpg" width="100%" height="250px">
+            </div>
+            <div class="col-md-8">
+              <div id="beginner">
+                <h2>와서 무료로 배우고 벤처팀도 꾸려서가!</h2>
+                <p>멋쟁이 사자처럼은 루비온레일스를 기반으로 웹서비스 제작에 초점을 맞출 것이며, 모든 교육과정은 무료로 진행 될 것입니다. 단, 모임비 혹은 경비는 본인 부담이 발생할 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="font-size:50px; margin-top:2%; margin-bottom:2%; color:#00a883"></span>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div id="beginner">
+                <h3>창업을 할거야!</h3>
+                <p>활동이 끝나고 팀원을 모아 실제로 창업하는 사람들이 생겨납니다.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div id="beginner">
+                <h3>프로그래머가 될거야!</h3>
+                <p>프로그래밍 입문에서 시작하여 전문적으로 프로그래머가 되려고 준비하는 사람들도 나타납니다.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div id="beginner">
+                <h3>취직을 해볼거야!</h3>
+                <p>창업이나 프로그래머가 되진 않지만 여기서의 경험을 바탕으로 IT계열에 취직하는 사람들도 늘고 있습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- what we do  -->
+
+      <section class="whatwedo">
+        <div class="container" style="width:100%; height:100%px; padding-bottom:5%; text-align:center; font-family:helvetica;">
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" style="font-family:helvetica;">
+              <h1 style="color:black;">What We Do</h1>
+              <hr>
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4" style="font-family:helvetica;">
+              <div id="activity">
+                  <span class="glyphicon glyphicon-education" aria-hidden="true" style="font-size:50px; color:#43d1ad;"></span>
+                  <h2>Study Coding</h2>
+                  <p>함께 코딩에 대해서 공부를 하고 IT업계가 돌아가는 것에 대해서 이야기할 것입니다.</p>
+              </div>
+            </div>
+            <div class="col-md-4" style="font-family:helvetica;">
+              <div id="activity">
+                  <span class="glyphicon glyphicon-send" aria-hidden="true" style="font-size:50px; color:#0097ff"></span>
+                  <h2>Making Service</h2>
+                  <p>평소 본인이 만들고 싶었던 서비스들을 직접 만들어 보는 시간을 가질겁니다.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div id="activity">
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true" style="font-size:50px; color:red"></span>
+                  <h2>Networking</h2>
+                  <p>다른 학교와 교류 및 대회도 진행할 예정입니다.</p>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- youtube video  -->
+
+
+      <section class="video" style="background-color:#f59900;">
+        <div class="container" style="width:100%; height:100%; padding-bottom:5%;">
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
+              <h1>Introduction Video</h1>
+              <hr>
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/25aa73PGC7I" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/jhGT8xKrY4o" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+      </section>
+
+      <!-- date and apply  -->
+
+
+      <section id="date">
+        <div class="container" style="width:100%; height:100%px; padding-top:5%; padding-bottom:5%;">
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+              <img src="https://scontent.xx.fbcdn.net/hphotos-xft1/t31.0-8/12715901_810493369055172_7163978613228557851_o.png" style="width:100%; height:100%;">
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
+          <div class="row" style="margin-top:5%">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
+              <h1 style="color:black;">How to Apply It</h1>
+              <hr>
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 apply">
+              <i class="fa fa-user fa-5" style="font-size:100px; color:#f59900"></i>
+              <h1 style="color:black; margin:0;">지원자격</h1>
+              <h3>서울시립대 재학생, 휴학생이라면 누구나<br>*졸업자는 불가능합니다</h3>
+            </div>
+            <div class="col-md-6 apply">
+              <i class="fa fa-pencil-square-o" style="font-size:100px; color:#a291c9"></i>
+              <h1 style="color:black; margin:0;">지원서양식</h1>
+              <h3>PDF파일로 자기소개와 만들고 싶은 <br>서비스를 포함한 내용의 자유양식</h3>
+            </div>
+          <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4" style="height:100px; margin-top:2%;">
+              <a class="btn btn-lg btn-danger" href="#" role="button" style="font-size:25px;">지원하기</a>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background-image: url('http://rack.3.mshcdn.com/media/ZgkyMDEzLzA0LzMwLzFlL2NvZGluZ2Z1dHVyLmQ1MzY5LmpwZwpwCXRodW1iCTEyMDB4NjI3IwplCWpwZw/9a2e4cfd/a4d/coding-future.jpg');">
+        <div style="width:100%; height:500px; background-color: rgba(4, 66, 49, 0.88); text-align:center; padding-top:5%">
+          <div>
+            <div>
+              <h1 style="font-size:5vw; padding-top10%; height:100%">Everyone should know how to program a computer, because it teaches you how to think.<br><br>-Steve Jobs</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- members  -->
+
+      <section id="members">
+        <div class="container" style="width:100%; height:500px;">
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
+              <h1 style="color:black;">Members</h1>
+              <hr>
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 지난기수  -->
+
+      <section id="lastproject">
+        <div class="container" style="width:100%; height:500px;">
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
+              <h1 style="color:black;">Last Project</h1>
+              <hr>
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4" style="text-align:center; font-family:helvetica; color:white;">
+              <a  href="https://microstream.kr/" target="_blank"><img src="http://blogpfthumb.phinf.naver.net/20160202_273/microstream_1454400109655kgf4R_PNG/main.png"></a>
+              <h1 style="color:black;">MicroStream</h1>
+              <h3>누구나 자유롭게 소리를 <br>녹음해 퍼트리는 공간</h3>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact  -->
+
+      <section id="contact" style="background-color:#3d3d3d;">
+        <div class="container whoweare" style="width:100%; height:300px; padding-top:3%;">
+          <div class="row">
+            <div class="col-md-12" style="text-align:center; font-size:70px;">
+              <a href="https://www.facebook.com/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC-at-%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%8C%80-783131848457991/" target="_blank"><i class="fa fa-facebook-square fa-4"></i></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4 style="font-family:helvetica; color:white; text-align:center;">페이스북 받아보기를 하시면 멋쟁이사자처럼 서울시립대 최신정보를 확인하실 수 있습니다. </br>또는 카카오톡 hanbber, 전화 010-6731-0627으로 문의주시면 친절히 답변해 드리겠습니다.</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+
+</html>
