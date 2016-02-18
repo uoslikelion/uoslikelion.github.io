@@ -3,6 +3,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -85,6 +87,14 @@
         max-width: 840px;
       }
 
+      .navbar-default .navbar-nav>li>a {
+        color: white;
+      }
+
+      .navbar-default .navbar-brand {
+        color: white;
+      }
+
       /*
        * VideoWrapper
        */
@@ -108,7 +118,7 @@
       }
       #video-wrapper .jumbo-text {
         font-weight: 900;
-        font-size: 12vw;
+        font-size: 8vw;
         margin-left: 10vw;
         font-family:helvetica;
       }
@@ -176,20 +186,23 @@
       }
 
     </style>
-
   </head>
-
   <body>
-
     <div id="template">
       <div id="video-wrapper">
         <div class="fill overlay">
             <!-- <div class="col-xs-offset-1 col-xs-8"> -->
-            <h1 class="jumbo-text" style="color: #33ccff">와서!</h1>
-            <h1 class="jumbo-text" style="color: #ffcc33">같이!</h1>
-            <h1 class="jumbo-text" style="color: #ff3366">만들어요!</h1>
+            <h1 class="jumbo-text text-center" style="padding-top: 15%;"><span style="color: #33ccff">와서 </span><span style="color: #ffcc33;">같이</span></h1>
+            <h1 class="jumbo-text text-center" style="color: #ff3366">코딩해요!</h1>
+            <div style="height: 50px;"></div>
             <div id="direction">
-              <h1 class="direction"><a href="/#whoweare">Introduction</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#date">Draft</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#members">Members</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#contact">Contact</a>&nbsp&nbsp/&nbsp&nbsp<a href="/#contact" style="color:red;">지원하기</a></h1>
+              <h1 class="direction" style="color: #33ccff;">
+                <a href="/#whoweare" style="color: #ffcc33;">Introduction</a>&nbsp&nbsp/&nbsp&nbsp
+                <a href="/#date" style="color: #ffcc33;">Draft</a>&nbsp&nbsp/&nbsp&nbsp
+                <a href="/#members" style="color: #ffcc33;">Members</a>&nbsp&nbsp/&nbsp&nbsp
+                <a href="/#contact" style="color: #ffcc33;">Contact</a>&nbsp&nbsp/&nbsp&nbsp
+                <a href="/#contact" style="color: #ff3366">지원하기<i class="fa fa-pencil-square"></i></a>
+              </h1>
             </div>
         </div>
         <iframe src="https://player.vimeo.com/video/153587143?autoplay=1&loop=1&title=0&byline=0&portrait=0"
@@ -202,29 +215,24 @@
       <!-- who we are  -->
 
       <section id="whoweare">
-        <div class="container" style="width:100%; height:100%px; padding-top:5%; padding-bottom:5%; text-align:center;">
+        <div class="container" style="width:100%; height:100%px; padding-top:15%; padding-bottom:10%; text-align:center;">
           <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8" style="font-family:helvetica;">
-              <h1 style="color:black;">멋쟁이 사자처럼 서울시립대 팀</h1>
-              <h2 style="color:#575757;">Likelion in University of Seoul</h2>
-
+            <div class="col-md-offset-2 col-md-8" style="font-family:helvetica; padding-bottom: 5%;">
+              <h2 style="color:black;">멋쟁이 사자처럼 서울시립대 팀</h2>
+              <h3 style="color:#575757;">Likelion in University of Seoul</h3>
               <hr>
-            </div>
-            <div class="col-md-2">
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div id="beginner">
-                <h2>웹서비스를 직접 만들고싶다</h2>
+                <h3 class="text-center">웹서비스를 직접 만들고싶다</h3>
                 <p>평소 직접 원하던 서비스를 만들어 보고싶었지만 방법을 몰랐던 분이나 벤쳐를 준비하는 분들이 쉽게 배워나가는 프로그램입니다.</p>
               </div>
             </div>
             <div class="col-md-6">
               <div id="beginner">
-                <h2>프로그래밍을 배우고 싶다</h2>
+                <h3 class="text-center">프로그래밍을 배우고 싶다</h3>
                 <p>프로그래밍 입문자나 경험자라도 새로운 언어로 공부해보려는 사람들을 위해서도 좋은 프로그램입니다.</p>
               </div>
             </div>
@@ -238,7 +246,7 @@
             </div>
             <div class="col-md-8">
               <div id="beginner">
-                <h2>와서 무료로 배우고 벤처팀도 꾸려서가!</h2>
+                <h3 class="text-center">와서 무료로 배우고 벤처팀도 꾸려서가!</h3>
                 <p>멋쟁이 사자처럼은 루비온레일스를 기반으로 웹서비스 제작에 초점을 맞출 것이며, 모든 교육과정은 무료로 진행 될 것입니다. 단, 모임비 혹은 경비는 본인 부담이 발생할 수 있습니다.</p>
               </div>
             </div>
@@ -249,19 +257,19 @@
           <div class="row">
             <div class="col-md-4">
               <div id="beginner">
-                <h3>창업을 할거야!</h3>
+                <h3 class="text-center">창업을 할거야!</h3>
                 <p>활동이 끝나고 팀원을 모아 실제로 창업하는 사람들이 생겨납니다.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div id="beginner">
-                <h3>프로그래머가 될거야!</h3>
+                <h3 class="text-center">프로그래머가 될거야!</h3>
                 <p>프로그래밍 입문에서 시작하여 전문적으로 프로그래머가 되려고 준비하는 사람들도 나타납니다.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div id="beginner">
-                <h3>취직을 해볼거야!</h3>
+                <h3 class="text-center">취직을 해볼거야!</h3>
                 <p>창업이나 프로그래머가 되진 않지만 여기서의 경험을 바탕으로 IT계열에 취직하는 사람들도 늘고 있습니다.</p>
               </div>
             </div>
@@ -272,36 +280,32 @@
       <!-- what we do  -->
 
       <section class="whatwedo">
-        <div class="container" style="width:100%; height:100%px; padding-bottom:5%; text-align:center; font-family:helvetica;">
+        <div class="container" style="width:100%; height:100%px; padding-top: 5%; padding-bottom:15%; text-align:center; font-family:helvetica;">
           <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6" style="font-family:helvetica;">
-              <h1 style="color:black;">What We Do</h1>
+            <div class="col-md-offset-3 col-md-6" style="font-family:helvetica; padding-bottom: 5%;">
+              <h2 style="color:black;">What We Do</h2>
               <hr>
-            </div>
-            <div class="col-md-3">
             </div>
           </div>
           <div class="row">
             <div class="col-md-4" style="font-family:helvetica;">
               <div id="activity">
                   <span class="glyphicon glyphicon-education" aria-hidden="true" style="font-size:50px; color:#43d1ad;"></span>
-                  <h2>Study Coding</h2>
+                  <h3>Study Coding</h3>
                   <p>함께 코딩에 대해서 공부를 하고 IT업계가 돌아가는 것에 대해서 이야기할 것입니다.</p>
               </div>
             </div>
             <div class="col-md-4" style="font-family:helvetica;">
               <div id="activity">
                   <span class="glyphicon glyphicon-send" aria-hidden="true" style="font-size:50px; color:#0097ff"></span>
-                  <h2>Making Service</h2>
+                  <h3>Making Service</h3>
                   <p>평소 본인이 만들고 싶었던 서비스들을 직접 만들어 보는 시간을 가질겁니다.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div id="activity">
                   <span class="glyphicon glyphicon-heart" aria-hidden="true" style="font-size:50px; color:red"></span>
-                  <h2>Networking</h2>
+                  <h3>Networking</h3>
                   <p>다른 학교와 교류 및 대회도 진행할 예정입니다.</p>
               </div>
             </div>
@@ -312,11 +316,11 @@
 
 
       <section class="video" style="background-color:#f59900;">
-        <div class="container" style="width:100%; height:100%; padding-bottom:5%;">
+        <div class="container" style="width:100%; height:100%; padding-top: 10%; padding-bottom:14%;">
           <div class="row">
             <div class="col-md-3">
             </div>
-            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
+            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white; padding-bottom: 5%;">
               <h1>Introduction Video</h1>
               <hr>
             </div>
@@ -337,24 +341,16 @@
 
 
       <section id="date">
-        <div class="container" style="width:100%; height:100%px; padding-top:5%; padding-bottom:5%;">
-          <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6">
+        <div class="container" style="width:100%; height:100%px; padding-top:13%; padding-bottom:10%;">
+          <div class="row" style="padding-bottom: 13%;">
+            <div class="col-md-offset-3 col-md-6" >
               <img src="https://scontent.xx.fbcdn.net/hphotos-xft1/t31.0-8/12715901_810493369055172_7163978613228557851_o.png" style="width:100%; height:100%;">
             </div>
-            <div class="col-md-3">
-            </div>
           </div>
-          <div class="row" style="margin-top:5%">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
-              <h1 style="color:black;">How to Apply It</h1>
+          <div class="row" style="padding-top:13%">
+            <div class="col-md-offset-3 col-md-6" style="text-align:center; font-family:helvetica; color:white; padding-bottom: 5%;">
+              <h2 style="color:black;">How to Apply It</h2>
               <hr>
-            </div>
-            <div class="col-md-3">
             </div>
           </div>
           <div class="row">
@@ -380,10 +376,13 @@
       </section>
 
       <section style="background-image: url('http://rack.3.mshcdn.com/media/ZgkyMDEzLzA0LzMwLzFlL2NvZGluZ2Z1dHVyLmQ1MzY5LmpwZwpwCXRodW1iCTEyMDB4NjI3IwplCWpwZw/9a2e4cfd/a4d/coding-future.jpg');">
-        <div style="width:100%; height:500px; background-color: rgba(4, 66, 49, 0.88); text-align:center; padding-top:5%">
+        <div style="width:100%; background-color: rgba(4, 66, 49, 0.88); text-align:center; padding:5%">
           <div>
             <div>
-              <h1 style="font-size:5vw; padding-top10%; height:100%">Everyone should know how to program a computer, because it teaches you how to think.<br><br>-Steve Jobs</h1>
+              <h2 style="color: white; font-size:5vw; padding-top10%; height:100%; font-family: serif;">
+                Everyone should know how to program a computer, because it teaches you how to think.<br><br>
+                <small style="color: white; font-family: serif;">-Steve Jobs</small>
+              </h2>
             </div>
           </div>
         </div>
@@ -394,13 +393,9 @@
       <section id="members">
         <div class="container" style="width:100%; height:500px;">
           <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
-              <h1 style="color:black;">Members</h1>
+            <div class="col-md-offset-3 col-md-6" style="text-align:center; font-family:helvetica; color:white; padding-bottom: 5%;">
+              <h2 style="color:black;">Members</h2>
               <hr>
-            </div>
-            <div class="col-md-3">
             </div>
           </div>
         </div>
@@ -409,15 +404,11 @@
       <!-- 지난기수  -->
 
       <section id="lastproject">
-        <div class="container" style="width:100%; height:500px;">
+        <div class="container" style="width:100%; height:500px; paddig-top: 10%; padding-bottom: 20%;">
           <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
-              <h1 style="color:black;">Last Project</h1>
+            <div class="col-md-offset-3 col-md-6" style="text-align:center; font-family:helvetica; color:white; padding-bottom: 5%;">
+              <h2 style="color:black;">Last Project</h2>
               <hr>
-            </div>
-            <div class="col-md-3">
             </div>
           </div>
           <div class="row">
@@ -425,8 +416,9 @@
             </div>
             <div class="col-md-4" style="text-align:center; font-family:helvetica; color:white;">
               <a  href="https://microstream.kr/" target="_blank"><img src="http://blogpfthumb.phinf.naver.net/20160202_273/microstream_1454400109655kgf4R_PNG/main.png"></a>
-              <h1 style="color:black;">MicroStream</h1>
+              <h2 style="color:black;">MicroStream</h2>
               <h3>누구나 자유롭게 소리를 <br>녹음해 퍼트리는 공간</h3>
+              <p>아이콘을 눌러 마이크로스트림 페이지를 들어가 보세요.</p>
             </div>
             <div class="col-md-4">
             </div>
@@ -444,8 +436,11 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
-              <h4 style="font-family:helvetica; color:white; text-align:center;">페이스북 받아보기를 하시면 멋쟁이사자처럼 서울시립대 최신정보를 확인하실 수 있습니다. </br>또는 카카오톡 hanbber, 전화 010-6731-0627으로 문의주시면 친절히 답변해 드리겠습니다.</h4>
+            <div class="col-md-12 text-center" style="color:white;">
+              <h4 style="font-family:helvetica;">페이스북 받아보기를 하시면 멋쟁이사자처럼 서울시립대 최신정보를 확인하실 수 있습니다.</h4>
+              <h3 style="color: white;">문의</h3>
+              <h4>카카오톡ID: hanbber, 전화: 010-6731-0627<br>
+              으로 문의주시면 친절히 답변해 드리겠습니다.</h4>
             </div>
           </div>
         </div>
