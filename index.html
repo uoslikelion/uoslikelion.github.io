@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="owl.carousel.css">
+    <link rel="stylesheet" href="owl.theme.css">
+    <script src="owl.carousel.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="http://bootswatch.com/readable/bootstrap.min.css"> -->
     <script src="https://mozilla.github.io/nunjucks/files/nunjucks.min.js"></script>
@@ -69,6 +72,15 @@
 
         renderElement("#template", context);
 
+      });
+      $(document).ready(function() {
+       
+        $("#owl-demo").owlCarousel({
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            items : 4,
+            itemsDesktop : [1199,3],
+            itemsDesktopSmall : [979,3]
+        });
       });
     </script>
     <style>
@@ -183,6 +195,14 @@
       .apply {
        height:250px;
        text-align:center;
+      }
+       #owl-demo .item{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #owl-demo .item img{
+        display: block;
+        width: 100%;
       }
 
     </style>
@@ -391,12 +411,22 @@
       <!-- members  -->
 
       <section id="members">
-        <div class="container" style="width:100%; height:500px;">
+        <div class="container-fluid" style="width:100%">
           <div class="row">
-            <div class="col-md-offset-3 col-md-6" style="text-align:center; font-family:helvetica; color:white; padding-bottom: 5%;">
-              <h2 style="color:black;">Members</h2>
+            <div class="col-md-3">
+            </div>  
+            <div class="col-md-6" style="text-align:center; font-family:helvetica; color:white;">
+              <h1 style="color:black;">Members</h1>
               <hr>
             </div>
+            <div class="col-md-3">
+            </div>
+            
+              <div id="owl-demo"  class="owl-carousel owl-theme">
+                <div class="item"><img src="image/경일.jpg" alt="Owl Image"></div>
+                <div class="item"><img src="image/한별.jpg" alt="Owl Image"></div>
+                <div class="item"><img src="image/지은.jpg" alt="Owl Image"></div>
+                <div class="item"><img src="image/현우.jpg" alt="Owl Image"></div>
           </div>
         </div>
       </section>
