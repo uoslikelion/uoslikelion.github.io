@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/earlyaccess/hanna.css');
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+@import url('style_desktop.css')(min-width: 769px); /*for desktop */
+@import url('style_mobile.css')(max-width: 768px); /* for mobile */
+@import url('font-awesome/css/font-awesome.min.css');
+
+
+/* GENERAL SETTINGS */
+* {
+	box-sizing: border-box;
+	font-family: 'Josefin Sans';
+}
+body {
+	margin:0 0;
+	text-align:center;
+}
+.sectionTitle {
+}
+.sectionSubTitle {
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+p {
+    font-family: 'Hanna', serif;
+}
+
+/*
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}*/
+.readable-hidden {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+nav .gnb .please{
+    display:none;
+}
+
+
+/*.members-intro-wrap .members-intro img {
+    width: 100%;
+    height: auto;
+    border-radius:100%;
+    border:1px solid #dddddd;
+    overflow:hidden;
+}
+
+*/
+
+.members-intro-wrap .members-intro .img-wrap{
+    width:100%;
+    height: 0;
+    border-radius:100%;
+    padding-bottom: 100%;
+    overflow:hidden;
+    border:1px solid #dddddd;
+}
+
+.members-intro-wrap .members-intro .img-wrap img{
+    width:100%;
+    height: auto;
+}
